@@ -1,0 +1,31 @@
+package com.gyw.web;
+
+import static org.junit.Assert.*;
+
+import org.junit.Before;
+import org.junit.Test;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
+import com.gyw.repo.GywDaoMongoRepo;
+
+public class TestJourneys {
+
+	private GywDaoMongoRepo repo;
+
+	@Before
+	public void setup() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
+				"testUsers.xml");
+		repo = (GywDaoMongoRepo) ctx.getBean("JourneyDao");
+	}
+
+	@Test
+	public void noJourneysOn13thNovember() {
+		assertEquals(0, repo.findJourneyByStartDate("10/12/2015").size());
+	}
+	@Test
+	public void twoJourneysOn12thNovember() {
+		assertEquals(2, repo.findJourneyByUserName("nathan"));
+	}
+
+}

@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?><testrun name="TestJourneys" project="GetYourWay" tests="3" started="3" failures="0" errors="0" ignored="2">
+  <testsuite name="com.gyw.web.TestJourneys" time="0.763">
+    <testcase name="oneJourneysOn10thDecember" classname="com.gyw.web.TestJourneys" time="0.0" ignored="true"/>
+    <testcase name="findall" classname="com.gyw.web.TestJourneys" time="0.762"/>
+    <testcase name="oneJourneyForUserNameNathan" classname="com.gyw.web.TestJourneys" time="0.0" ignored="true"/>
+  </testsuite>
+</testrun>

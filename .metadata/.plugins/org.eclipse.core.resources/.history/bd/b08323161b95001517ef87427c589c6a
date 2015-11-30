@@ -1,0 +1,27 @@
+package com.gyw.web;
+
+import static org.junit.Assert.*;
+
+import org.junit.Test;
+
+public class TestJourneys {
+
+	private GywDaoMongoRepo repo;
+
+	@Before
+	public void setup() {
+		ClassPathXmlApplicationContext ctx = new ClassPathXmlApplicationContext(
+				"testUsers.xml");
+		repo = (GywDaoMongoRepo) ctx.getBean("JourneyDao");
+	}
+
+	@Test
+	public void noJourneysOn13thNovember() {
+		assertEquals(0, repo.findJourneyByStartDate("13/11/15").size());
+	}
+	@Test
+	public void twoJourneysOn12thNovember() {
+		assertEquals(2, repo.findJourneyByStartDate("12/11/15").size());
+	}
+
+}
